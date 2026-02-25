@@ -2,97 +2,147 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHIFT AR - Le futur de la vision</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SHIFT AR — Excellence Optique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header / Hero Section -->
-    <header class="hero section-reveal">
+    <div class="blur-bg" id="overlay"></div>
+
+    <nav>
         <div class="container">
-            <div class="hero-content">
-                <span class="product-badge">Nouveau</span>
-                <h1>SHIFT AR</h1>
-                <p class="hero-tagline">L'augmentation pure. Sans compromis.</p>
-                <div class="price-tag">999€</div>
+            <div class="logo" onclick="location.reload()">SHIFT AR</div>
+            <div class="cart-trigger" id="open-cart">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4H6z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <div class="cart-count" id="cart-count">0</div>
             </div>
-            <div class="hero-image-placeholder">
-                <!-- Image HD du produit (Placeholder 16:9) -->
-                <div class="placeholder-box">SHIFT AR - 16:9 HD Render</div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <span class="product-badge">Masterpiece Series</span>
+            <h1>SHIFT AR</h1>
+
+            <div class="gallery-container">
+                <div class="main-image-viewport">
+                    <img id="main-img" src="https://i.imgur.com/rpzwJlf.jpeg" alt="SHIFT AR Front">
+                </div>
+                <div class="thumbnails">
+                    <img src="https://i.imgur.com/rpzwJlf.jpeg" class="thumb active" onclick="switchImg(this)">
+                    <img src="https://i.imgur.com/bA7bfJc.jpeg" class="thumb" onclick="switchImg(this)">
+                    <img src="https://i.imgur.com/g3Q4IFm.jpeg" class="thumb" onclick="switchImg(this)">
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Technical Specs Grid -->
-    <section class="specs section-reveal">
-        <div class="container">
-            <h2 class="section-title">Ingénierie de précision</h2>
-            <div class="specs-grid">
-                <article class="spec-item">
-                    <div class="spec-value">30MP</div>
-                    <div class="spec-label">Capteur Photonique</div>
-                    <p class="spec-description">Une clarté absolue, capturant chaque détail de votre réalité.</p>
-                </article>
-                <article class="spec-item">
-                    <div class="spec-value">9h</div>
-                    <div class="spec-label">Autonomie Réelle</div>
-                    <p class="spec-description">Une gestion d'énergie révolutionnaire pour une journée complète d'immersion.</p>
-                </article>
-                <article class="spec-item">
-                    <div class="spec-value">Audio</div>
-                    <div class="spec-label">Spatial Dynamique</div>
-                    <p class="spec-description">Un son qui vous entoure, synchronisé parfaitement avec votre environnement.</p>
-                </article>
-            </div>
+    <section class="specs-section container">
+        <h2>Ingénierie de Précision</h2>
+        <div class="specs-grid">
+            <article class="spec-item">
+                <div class="spec-value">30MP</div>
+                <div class="spec-label">Capteur Photonique</div>
+                <p class="spec-description">Une clarté absolue, capturant chaque détail de votre réalité.</p>
+            </article>
+            <article class="spec-item">
+                <div class="spec-value">9h</div>
+                <div class="spec-label">Autonomie Réelle</div>
+                <p class="spec-description">Une gestion d'énergie révolutionnaire pour une journée complète d'immersion.</p>
+            </article>
+            <article class="spec-item">
+                <div class="spec-value">Audio</div>
+                <div class="spec-label">Spatial Dynamique</div>
+                <p class="spec-description">Un son qui vous entoure, synchronisé parfaitement avec votre environnement.</p>
+            </article>
         </div>
     </section>
 
     <!-- Box Content Section -->
-    <section class="box-content section-reveal">
-        <div class="container">
-            <h2 class="section-title">Dans la boîte</h2>
-            <div class="box-grid">
-                <div class="box-image-placeholder">
-                    <div class="placeholder-box">Box Components Visualization</div>
-                </div>
-                <ul class="box-list">
-                    <li>Lunettes SHIFT AR</li>
-                    <li>Étui de charge en titane</li>
-                    <li>Câble USB-C tressé (2m)</li>
-                    <li>Chiffon de nettoyage en microfibre</li>
-                    <li>Guide de démarrage rapide</li>
-                </ul>
+    <section class="box-content container">
+        <h2>Dans la boîte</h2>
+        <div class="box-grid">
+            <div class="box-image-placeholder">
+                <img src="https://i.imgur.com/g3Q4IFm.jpeg" alt="Box Content">
             </div>
+            <ul class="box-list">
+                <li>Lunettes SHIFT AR</li>
+                <li>Étui de charge en titane</li>
+                <li>Câble USB-C tressé (2m)</li>
+                <li>Chiffon de nettoyage en microfibre</li>
+                <li>Guide de démarrage rapide</li>
+            </ul>
         </div>
     </section>
 
     <!-- Warranty & Payment Section -->
-    <section class="trust-info section-reveal">
-        <div class="container">
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <h3>Garantie Premium</h3>
-                    <p>2 ans de protection complète et assistance prioritaire 24/7.</p>
-                </div>
-                <div class="trust-item">
-                    <h3>Paiement Sécurisé</h3>
-                    <p>Options de paiement en 3x ou 4x sans frais disponibles via nos partenaires.</p>
-                </div>
+    <section class="trust-info container">
+        <div class="trust-grid">
+            <div class="trust-item">
+                <h3>Garantie Premium</h3>
+                <p>2 ans de protection complète et assistance prioritaire 24/7.</p>
+            </div>
+            <div class="trust-item">
+                <h3>Paiement Sécurisé</h3>
+                <p>Options de paiement en 3x ou 4x sans frais disponibles via nos partenaires.</p>
             </div>
         </div>
     </section>
 
-    <!-- Fixed/Strong CTA -->
-    <footer class="purchase-cta">
-        <div class="container cta-container">
-            <div class="cta-info">
-                <span class="cta-price">999€</span>
-                <span class="cta-model">SHIFT AR - Édition Silver</span>
-            </div>
-            <button class="btn-buy">Acheter</button>
+    <section class="price-section container">
+        <div class="price">999.00€</div>
+        <button class="cta-primary" id="add-to-cart">Ajouter au panier</button>
+    </section>
+
+    <!-- Sidebar Panier -->
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Panier</h2>
+            <span class="close-cart" id="close-cart">&times;</span>
         </div>
-    </footer>
+        <div id="cart-items-container">
+            <p id="empty-msg" style="color: var(--text-secondary); font-size: 0.9rem;">Votre sélection est vide.</p>
+        </div>
+        <div id="cart-footer" style="display:none; margin-top: 20px;">
+            <div style="display:flex; justify-content: space-between; font-weight: 700; margin-bottom: 30px;">
+                <span style="letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.8rem;">Sous-total</span>
+                <span>999.00€</span>
+            </div>
+            <button class="checkout-btn" id="start-checkout">Finaliser la commande</button>
+        </div>
+    </aside>
+
+    <!-- Modal Paiement -->
+    <div class="modal-overlay" id="checkout-modal">
+        <div class="modal-content" id="payment-step">
+            <div class="logo" style="margin-bottom: 40px; font-size: 0.8rem;">SHIFT AR</div>
+            <h2 style="font-family: var(--font-logo); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;">Paiement Sécurisé</h2>
+            <div class="checkout-form">
+                <input type="text" placeholder="Détenteur de la carte">
+                <input type="text" placeholder="Numéro de carte">
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <input type="text" placeholder="MM / AA">
+                    <input type="text" placeholder="CVC">
+                </div>
+                <button class="checkout-btn" id="confirm-payment" style="margin-top: 30px;">Procéder au règlement</button>
+                <p style="font-size: 0.7rem; color: var(--text-secondary); margin-top: 20px; cursor: pointer;" id="cancel-payment">Annuler la transaction</p>
+            </div>
+        </div>
+
+        <div class="modal-content" id="success-message">
+            <div style="font-size: 3rem; margin-bottom: 20px; font-weight: 200;">✓</div>
+            <h2 style="font-family: var(--font-logo); font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase;">Succès</h2>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">Votre SHIFT AR a été enregistré.</p>
+            <button class="cta-primary" style="margin-top: 60px;" onclick="location.reload()">Fermer</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
